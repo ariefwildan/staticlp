@@ -36,14 +36,13 @@ body {
 .wrapper {
     max-width: 600px;
     margin: 0 auto;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(241, 241, 241);
 }
 
 .image img {
     width: 100%;
     margin-top: -1px;
 }
-
 
 .button {
     margin: 20px auto;
@@ -56,12 +55,57 @@ body {
     font-weight: bold;
     text-align: center;
     display: block;
-    max-width: 70%;
+    max-width: 75%;
     font: 500;
+    border: 4px solid #ffffff;
 }
 
 .slideshow img {
     max-width: 100%;
+}
+
+.arrow {
+    padding-bottom: 20px;
+}
+.accordion {
+  background-color: #eee;
+  color: #2e2e2e;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 18px;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+.accordion:after {
+  content: '\002B';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.center {
+    text-align: center;
 }
     </style>
 
@@ -70,7 +114,6 @@ body {
     <div class="wrapper">
 
         <div class="image">
-            <img src="https://res.cloudinary.com/ddv/image/upload/v1678777280/ag.co.id/AIO_03.webp" alt="">
             <img src="https://res.cloudinary.com/ddv/image/upload/v1678777280/ag.co.id/AIO_04.webp" alt="">
         </div>
 
@@ -80,15 +123,35 @@ body {
             <img class="mySlides" src="https://res.cloudinary.com/ddv/image/upload/v1678777280/ag.co.id/LW_21.webp" alt="">
             <img class="mySlides" src="https://res.cloudinary.com/ddv/image/upload/v1678777280/ag.co.id/LW_22.webp" alt="">
         </div>
-
-<div>
-    <a class="button" id ="button-1" href="https://g.dlingo.net/kaosbdg">AMBIL PROMONYA DISINI!</a>
-</div>
-            
-
-            
+        <div class="arrow">
+            <img src="https://res.cloudinary.com/ddv/image/upload/v1678935170/panah-2-1.gif" alt="">
+            <a class="button" id ="button-1" href="https://g.dlingo.net/kaosbdg">AMBIL PROMONYA DISINI!</a>
+        </div>
         
-
+        <div>
+            <a class="button" id ="button-1" href="https://g.dlingo.net/kaosbdg">AMBIL PROMONYA DISINI!</a>
+        </div>
+            
+        <div class="center">
+            <h2>Frequently Asked Question</h2>
+            <h2>F.A.Q</h2>
+        </div>
+        
+        <button class="accordion">Section 1</button>
+        <div class="panel">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+        
+        <button class="accordion">Section 2</button>
+        <div class="panel">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+        
+        <button class="accordion">Section 3</button>
+        <div class="panel">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+            
     </div>
 </body>
 
@@ -108,4 +171,20 @@ body {
       setTimeout(carousel, 2000); // Change image every 2 seconds
     }
     </script>
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+        
+        for (i = 0; i < acc.length; i++) {
+          acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+              panel.style.maxHeight = null;
+            } else {
+              panel.style.maxHeight = panel.scrollHeight + "px";
+            } 
+          });
+        }
+        </script>
 </html>
