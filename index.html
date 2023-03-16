@@ -39,6 +39,10 @@ body {
     display: block;
     max-width: 80%;
 }
+
+.slideshow img {
+    max-width: 100%;
+}
     </style>
 
 </head>
@@ -50,12 +54,15 @@ body {
             <img src="https://res.cloudinary.com/ddv/image/upload/v1678777280/ag.co.id/AIO_04.webp" alt="">
         </div>
 
-        <div class="slider">
-
+        <div class="slideshow">
+            <img class="mySlides" src="https://res.cloudinary.com/ddv/image/upload/v1678777219/ag.co.id/LW_19.webp" alt="">
+            <img class="mySlides" src="https://res.cloudinary.com/ddv/image/upload/v1678777280/ag.co.id/LW_20.webp" alt="">
+            <img class="mySlides" src="https://res.cloudinary.com/ddv/image/upload/v1678777280/ag.co.id/LW_21.webp" alt="">
+            <img class="mySlides" src="https://res.cloudinary.com/ddv/image/upload/v1678777280/ag.co.id/LW_22.webp" alt="">
         </div>
 
 <div>
-    <a class="button" href="https://g.dlingo.net/kaosbdg">PESAN SEKARANG</a>
+    <a class="button" id ="button-1" href="https://g.dlingo.net/kaosbdg">PESAN SEKARANG juga</a>
 </div>
             
 
@@ -64,4 +71,21 @@ body {
 
     </div>
 </body>
+
+<script>
+    var myIndex = 0;
+    carousel();
+    
+    function carousel() {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+      }
+      myIndex++;
+      if (myIndex > x.length) {myIndex = 1}    
+      x[myIndex-1].style.display = "block";  
+      setTimeout(carousel, 2000); // Change image every 2 seconds
+    }
+    </script>
 </html>
