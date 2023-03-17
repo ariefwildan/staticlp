@@ -177,6 +177,60 @@ body {
         </div>
 
     </div>
+
+    <script type="facebookpixel" id="facebook-pixel">
+      {
+          "vars": {
+            "pixelId": "834619577777273"
+          },
+          "triggers": {
+            "trackPageview": {
+              "on": "visible",
+              "request": "pageview"
+            },
+            "scrollPings": {
+              "on": "scroll",
+              "scrollSpec": {
+                "verticalBoundaries": [25, 50, 90],
+                "horizontalBoundaries": [90]
+              },
+              "request": "event"
+            },
+                                "buttonClick1": {
+              "selector": "#cta",
+              "on": "click",
+              "request": "event",
+              "vars": {
+                "eventName": "Lead"
+              }
+            },
+                                          "buttonClick2": {
+              "selector": "#cta-2",
+              "on": "click",
+              "request": "event",
+              "vars": {
+                "eventName": "Lead"
+              }
+            },
+                                          "buttonClick3": {
+              "selector": "#cta-3",
+              "on": "click",
+              "request": "event",
+              "vars": {
+                "eventName": "Lead"
+              }
+            },
+            "buttonClick4": {
+              "selector": "#cta-4",
+              "on": "click",
+              "request": "event",
+              "vars": {
+                "eventName": "Lead"
+              }
+            }
+                              }
+        }
+    </script>
 </body>
 
 <script>
@@ -228,57 +282,5 @@ body {
               src="https://www.facebook.com/tr?id=834619577777273&ev=PageView&noscript=1"
               /></noscript>
               <!-- End Meta Pixel Code -->
-<script type="facebookpixel" id="facebook-pixel">
-  {
-      "vars": {
-        "pixelId": "834619577777273"
-      },
-      "triggers": {
-        "trackPageview": {
-          "on": "visible",
-          "request": "pageview"
-        },
-        "scrollPings": {
-          "on": "scroll",
-          "scrollSpec": {
-            "verticalBoundaries": [25, 50, 90],
-            "horizontalBoundaries": [90]
-          },
-          "request": "event"
-        },
-                            "buttonClick1": {
-          "selector": "#cta",
-          "on": "click",
-          "request": "event",
-          "vars": {
-            "eventName": "Lead"
-          }
-        },
-                                      "buttonClick2": {
-          "selector": "#cta-2",
-          "on": "click",
-          "request": "event",
-          "vars": {
-            "eventName": "Lead"
-          }
-        },
-                                      "buttonClick3": {
-          "selector": "#cta-3",
-          "on": "click",
-          "request": "event",
-          "vars": {
-            "eventName": "Lead"
-          }
-        },
-        "buttonClick4": {
-          "selector": "#cta-4",
-          "on": "click",
-          "request": "event",
-          "vars": {
-            "eventName": "Lead"
-          }
-        }
-                          }
-    }
-</script>
+
 </html>
