@@ -178,12 +178,14 @@ img {vertical-align: middle;}
 
 PASTE KODE DISINI
 =================
+        <!-- GAMBAR BIASA -->
         <div class="gambar">
           <img src="xxx" alt="">
           <img src="xxx" alt="">
           <img src="xxx" alt="">
         </div>
 
+        <!-- SLIDER PERTAMA -->
         <div class="slideshow-container">
           <div class="mySlides1">
             <img src="/img/35.1.webp" style="width:100%">
@@ -197,6 +199,7 @@ PASTE KODE DISINI
           <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
         </div>
 
+        <!-- JIKA ADA SLIDER KEDUA PAKE INI-->
         <div class="slideshow-container">
           <div class="mySlides2">
             <img src="img/35.3.webp" style="width:100%">
@@ -210,6 +213,7 @@ PASTE KODE DISINI
           <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
         </div>
 
+        <!-- JIKA ADA SLIDER KETIGA PAKE INI-->
         <div class="slideshow-container">
           <div class="mySlides3">
             <img src="img/35.5.webp" style="width:100%">
@@ -223,23 +227,34 @@ PASTE KODE DISINI
           <a class="next" onclick="plusSlides(1, 2)">&#10095;</a>
         </div>
 
+        <!-- TOMBOL CTA -->
         <div class="tombol">
           <a class="button" onClick="fbq('track', 'Lead');" target="_blank" href="linkwa">CTA</a>
         </div>
 
+        <!-- TOMBOL CTA IMAGE-->
         <div class="gambar">
           <a onClick="fbq('track', 'Lead');" target="_blank" href="xxx"><img src="xxx" alt="">button image</a>
         </div>
 
+        <!-- PANAH BERGERAK & TOMBOL -->
         <div class="panah">
           <img src="xxx" alt="">
           <a class="button" onClick="fbq('track', 'Lead')" href="xxx" target="_blank">PROMO</a>
         </div>
 
+        <!-- PANAH BERGERAK & TOMBOL CTA IMAGE-->
+        <div class="panah">
+          <img src="xxx" alt="">
+          <a onClick="fbq('track', 'Lead');" target="_blank" href="xxx"><img src="xxx" alt="">button image</a>
+        </div>
+
+        <!-- VIDEO YOUTUBE -->
         <div class="video">
           <iframe src="https://www.youtube.com/embed/xxxxxxx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
 
+        <!-- FAQ -->
         <div class="box-acr">
           <div class="center">
             <h2>F.A.Q</h2>
@@ -252,9 +267,10 @@ PASTE KODE DISINI
           </div>
 
         </div>
-
+    <!-- HAPUS SAMPAI SINI -->
     </div>
 </body>
+<!-- SLIDESHOW 1 2 3 -->
 <script>
   var slideIndex = [1,1,1];
   var slideId = ["mySlides1", "mySlides2", "mySlides3"]
@@ -277,6 +293,8 @@ PASTE KODE DISINI
     x[slideIndex[no]-1].style.display = "block";  
   }
   </script>
+
+  <!-- FAQ -->
     <script>
         var acc = document.getElementsByClassName("accordion");
         var i;
