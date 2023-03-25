@@ -34,6 +34,45 @@ body {
     box-sizing: border-box;
 }
 
+.mySlides1, .mySlides2 {display: none}
+
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a grey background color */
+.prev:hover, .next:hover {
+  background-color: #f1f1f1;
+  color: black;
+}
+
 .wrapper {
     max-width: 600px;
     margin: 0 auto;
@@ -125,17 +164,6 @@ body {
     background-color: #ffffff;
     border-radius: 10px;
 }
-
-#slideshow { 
-  position: relative; 
-}
-#slideshow > div { 
-  position: absolute; 
-}
-#slideshow img {
-  width: 100%;
-}
-
     </style>
     
 
@@ -151,24 +179,51 @@ PASTE KODE DISINI
           <img src="xxx" alt="">
         </div>
 
+        <div class="slideshow-container">
+          <div class="mySlides1">
+            <img src="/img/35.1.webp" style="width:100%">
+          </div>
+        
+          <div class="mySlides1">
+            <img src="/img/35.2.webp" style="width:100%">
+          </div>
+        
+          <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+        </div>
+
+        <div class="slideshow-container">
+          <div class="mySlides2">
+            <img src="img/35.3.webp" style="width:100%">
+          </div>
+        
+          <div class="mySlides2">
+            <img src="img/35.4.webp" style="width:100%">
+          </div>
+        
+          <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+        </div>
+
+        <div class="slideshow-container">
+          <div class="mySlides3">
+            <img src="img/35.5.webp" style="width:100%">
+          </div>
+        
+          <div class="mySlides3">
+            <img src="img/35.6.webp" style="width:100%">
+          </div>
+        
+          <a class="prev" onclick="plusSlides(-1, 2)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1, 2)">&#10095;</a>
+        </div>
+
         <div class="tombol">
-          <a class="button" onClick="fbq('track', 'Lead');" target="_blank" href="linkwa">PROMO</a>
+          <a class="button" onClick="fbq('track', 'Lead');" target="_blank" href="linkwa">CTA</a>
         </div>
 
         <div class="gambar">
-          <a onClick="fbq('track', 'Lead');" target="_blank" href="xxx"><img src="xxx" alt=""></a>
-        </div>
-
-        <div id="slideshow">
-          <div>
-            <img src="/img/35.1.webp">
-          </div>
-          <div>
-            <img src="/img/35.4.webp">
-          </div>
-          <div>
-            <img src="/img/35.2.webp">
-          </div>
+          <a onClick="fbq('track', 'Lead');" target="_blank" href="xxx"><img src="xxx" alt="">button image</a>
         </div>
 
         <div class="panah">
@@ -195,20 +250,28 @@ PASTE KODE DISINI
 
     </div>
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <script>
-$("#slideshow > div:gt(0)").hide();
-
-  setInterval(function() {
-    $('#slideshow > div:first')
-      .fadeOut(1000)
-      .next()
-      .fadeIn(1000)
-      .end()
-      .appendTo('#slideshow');
-  }, 3000);
+  var slideIndex = [1,1,1];
+  var slideId = ["mySlides1", "mySlides2", "mySlides3"]
+  showSlides(1, 0);
+  showSlides(1, 1);
+  showSlides(1, 2);
+  
+  function plusSlides(n, no) {
+    showSlides(slideIndex[no] += n, no);
+  }
+  
+  function showSlides(n, no) {
+    var i;
+    var x = document.getElementsByClassName(slideId[no]);
+    if (n > x.length) {slideIndex[no] = 1}    
+    if (n < 1) {slideIndex[no] = x.length}
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    x[slideIndex[no]-1].style.display = "block";  
+  }
   </script>
-
     <script>
         var acc = document.getElementsByClassName("accordion");
         var i;
