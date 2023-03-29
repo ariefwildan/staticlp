@@ -3,7 +3,7 @@ $(document).on('submit','form', function(e){
     var input_blanter = document.getElementById('nomor');
     
     /* Whatsapp Settings */
-    var walink = 'https://api.whatsapp.com/send',
+    var walink = 'https://web.whatsapp.com/send',
         phone = '6281320636964',
         walink2 = 'Halo Wildan',
         text_no = 'Isi semua Formulir lalu klik Submit.';
