@@ -1,0 +1,117 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <style>.button,.next,.prev{color:#fff;font-weight:700}@font-face{font-family:Poppins;font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLGT9Z1xlFQ.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}body{margin:0;padding:0;font-family:Poppins,sans-serif}*{box-sizing:border-box}.mySlides1,.mySlides2,.mySlides3{display:none}img{vertical-align:middle}.slideshow-container{max-width:1000px;position:relative;margin:auto}.next,.prev{cursor:pointer;position:absolute;top:50%;width:auto;padding:16px;margin-top:-22px;font-size:18px;transition:.6s;border-radius:0 3px 3px 0;user-select:none;background-color:#363636}.next{right:0;border-radius:3px 0 0 3px}.next:hover,.prev:hover{background-color:#f1f1f1;color:#000}.wrapper{max-width:600px;margin:0 auto;background-color:#e77575}.gambar img{display:block;width:100%;margin-top:-2px}.panah img,.video iframe{margin:0 auto;display:block;width:100%}.video iframe{height:350px}.button{margin:20px auto;padding:10px;background-color:#0cbc87;border-radius:50px;font-size:20px;text-decoration:none;text-align:center;display:block;max-width:75%;border:4px solid #fff}.panah{padding-bottom:20px}.accordion{background-color:#f7f7f7;color:#2e2e2e;cursor:pointer;padding:18px;width:100%;border:none;text-align:left;outline:0;font-size:18px;transition:.4s}.accordion:hover,.active{background-color:#dfdfdf}.box-acr,.panel{background-color:#fff}.accordion:after{content:'\002B';color:#777;font-weight:700;float:right;margin-left:5px}.active:after{content:"\2212"}.panel{padding:0 18px;max-height:0;overflow:hidden;transition:max-height .2s ease-out}.center{text-align:center}.box-acr{margin:10px;padding:10px;border-radius:10px}.formulir {
+        color: white;
+        margin: 80px 30px 80px 30px;
+    }
+    input[type=text], input[type=number], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    font-size: 15px;
+}
+input[type=submit] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type=number] {
+    -moz-appearance: textfield;
+}
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div id="formulir" class="formulir">
+            <h3 style="text-align: center;">Kontak Formulir</h3>
+            <form action="">
+                <label for="nama">Nama</label><br>
+                <input type="text" id="nama" name="nama" placeholder="Nama Anda"><br>
+                <label for="nomor">Nomor Whatsapp</label><br>
+                <input type="number" id="nomor" name="nomor" placeholder="Nomor Whatsapp Anda"><br>
+                <label for="pesan">Pesan</label><br>
+                <textarea name="pesan" id="pesan" cols="30" rows="10" placeholder="Keperluan Anda"></textarea>
+                <input type="submit" value="Submit Via Whatsapp" class="submit" href="javascript:void">
+                <div id="text-info"></div>
+            </form>
+        </div>
+    </div>
+</body>
+<script>
+$(document).on('submit','form', function(e){
+    e.preventDefault();
+    var input_blanter = document.getElementById('nomor');
+    
+    /* Whatsapp Settings */
+    var walink = 'https://web.whatsapp.com/send',
+        phone = '6281320636964',
+        walink2 = 'Halo Wildan',
+        text_no = 'Isi semua Formulir lalu klik Submit.';
+    
+    /* Smartphone Support */
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    var walink = 'whatsapp://send';
+    }
+    
+    if("" != input_blanter.value){
+    
+     /* Call Input Form */
+    var input_name1 = $("#nama").val(),
+        input_number1 = $("#nomor").val(),
+        input_textarea1 = $("#pesan").val();
+        
+    /* Final Whatsapp URL */
+    var blanter_whatsapp = walink + '?phone=' + phone + '&text=' + walink2 + '%0A%0A' +
+        '*Nama* : ' + input_name1 + '%0A' +
+        '*Nomor HP* : ' + input_number1 + '%0A' +
+        '*Pesan* : ' + input_textarea1 + '%0A';
+    
+    /* Whatsapp Window Open */
+    window.open(blanter_whatsapp,'_blank');
+    
+    } else {
+        document.getElementById("text-info").innerHTML = '<span class="no">'+text_no+'</span>';
+    }
+    });
+    </script>
+<script>var slideIndex=[1,1,1,1],slideId=["mySlides1","mySlides2","mySlides3","mySlides4"];function plusSlides(e,s){showSlides(slideIndex[s]+=e,s)}function showSlides(e,s){var l,d=document.getElementsByClassName(slideId[s]);for(e>d.length&&(slideIndex[s]=1),e<1&&(slideIndex[s]=d.length),l=0;l<d.length;l++)d[l].style.display="none";d[slideIndex[s]-1].style.display="block"}showSlides(1,0),showSlides(1,1),showSlides(1,2),showSlides(1,3);</script>
+<script>var i,acc=document.getElementsByClassName("accordion");for(i=0;i<acc.length;i++)acc[i].addEventListener("click",function(){this.classList.toggle("active");var e=this.nextElementSibling;e.style.maxHeight?e.style.maxHeight=null:e.style.maxHeight=e.scrollHeight+"px"});</script>
+<!-- Meta Pixel Code -->
+<script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1111111');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1111111&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+</html>
