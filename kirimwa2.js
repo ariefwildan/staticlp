@@ -4,8 +4,8 @@ $(document).on('submit','form', function(e){
     
     /* Whatsapp Settings */
     var walink = 'https://web.whatsapp.com/send',
-        phone = '6281320636964',
-        walink2 = 'Halo Wildan',
+        phone = '6285298999962',
+        walink2 = 'Halo',
         text_no = 'Isi semua Formulir lalu klik Submit.';
     
     /* Smartphone Support */
@@ -17,14 +17,16 @@ $(document).on('submit','form', function(e){
     
      /* Call Input Form */
     var input_name1 = $("#nama").val(),
+        input_domisili = $("#domisili").val(),
         input_number1 = $("#nomor").val(),
-        input_textarea1 = $("#pesan").val();
+        input_email = $("#email").val();
         
     /* Final Whatsapp URL */
     var blanter_whatsapp = walink + '?phone=' + phone + '&text=' + walink2 + '%0A%0A' +
         '*Nama* : ' + input_name1 + '%0A' +
+        '*Domisili* : ' + input_domisili + '%0A' +
         '*Nomor HP* : ' + input_number1 + '%0A' +
-        '*Pesan* : ' + input_textarea1 + '%0A';
+        '*Email* : ' + input_email + '%0A';
     
     /* Whatsapp Window Open */
     window.open(blanter_whatsapp,'_blank');
