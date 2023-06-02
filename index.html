@@ -34,7 +34,7 @@ body {
     box-sizing: border-box;
 }
 
-.mySlides1, .mySlides2, .mySlides3 {display: none}
+.mySlides1, .mySlides2, .mySlides3, .mySlides4 {display: none}
 
 img {vertical-align: middle;}
 
@@ -230,6 +230,16 @@ KALO UDAH SELESAI HAPUS YG DIBAWAH INI
           <a class="next" onclick="plusSlides(1, 3)">&#10095;</a>
         </div>
 
+        <!-- JIKA ADA SLIDER KELIMA PAKE INI-->
+        <div class="slideshow-container">
+          <div class="mySlides5">
+            <img src="/img/00.webp" style="width:100%">
+          </div>
+
+          <a class="prev" onclick="plusSlides(-1, 4)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1, 4)">&#10095;</a>
+        </div>
+
         <!-- TOMBOL CTA -->
         <div class="tombol">
           <a class="button" onClick="fbq('track', 'Lead');" target="_blank" href="xxxx">CTA</a>
@@ -275,12 +285,13 @@ KALO UDAH SELESAI HAPUS YG DIBAWAH INI
 </body>
 <!-- SLIDESHOW 1 2 3 4-->
 <script>
-  var slideIndex = [1,1,1,1];
-  var slideId = ["mySlides1", "mySlides2", "mySlides3", "mySlides4"]
+  var slideIndex = [1,1,1,1,1];
+  var slideId = ["mySlides1", "mySlides2", "mySlides3", "mySlides4", "mySlides5"]
   showSlides(1, 0);
   showSlides(1, 1);
   showSlides(1, 2);
   showSlides(1, 3);
+  showSlides(1, 4);
   
   function plusSlides(n, no) {
     showSlides(slideIndex[no] += n, no);
